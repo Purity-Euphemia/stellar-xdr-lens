@@ -860,6 +860,10 @@ func describeOperation(op xdr.Operation) string {
 		if !ok {
 			break
 		}
+		// AccountMerge diagnostic guidance:
+		// - account_merge_has_sub_entries: close all trustlines, DEX offers, and data entries before merging
+		// - account_merge_seqnum_too_far: use a recent sequence number
+		// - account_merge_dest_full: reduce the destination's balance or remove entries before merging
 		return "merge this account into " + shortAddr(addressOf(dest))
 
 	case xdr.OperationTypeBumpSequence:

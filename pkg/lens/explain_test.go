@@ -344,6 +344,8 @@ func TestExplainCodeNeverRestatesTheConstant(t *testing.T) {
 		"PaymentResultCodePaymentUnderfunded",
 		"ChangeTrustResultCodeChangeTrustLowReserve",
 		"AccountMergeResultCodeAccountMergeHasSubEntries",
+		"AccountMergeResultCodeAccountMergeSeqNumTooFar",
+		"AccountMergeResultCodeAccountMergeDestFull",
 	}
 
 	for _, c := range samples {
